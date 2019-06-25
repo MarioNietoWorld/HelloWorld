@@ -1,15 +1,25 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic startup code for a JUCE application.
-
-  ==============================================================================
-*/
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.h"
+
+
+struct coche
+{
+	int numeroPuertas = 4;
+	int numRuedas= 4;
+	bool EstaEncendido = true;
+
+	coche();
+
+	bool Enceder() 
+	{
+		return true;
+	}
+
+};
+
+coche::coche() : numeroPuertas(5), numRuedas(6), EstaEncendido(false){}
+
 
 //==============================================================================
 class HelloWorldApplication  : public JUCEApplication
@@ -26,7 +36,10 @@ public:
     void initialise (const String& commandLine) override
     {
         // This method is where you should put your application's initialisation code..
+		coche miCoche;
 
+		auto encender = miCoche.numeroPuertas;
+		
         mainWindow.reset (new MainWindow (getApplicationName()));
     }
 
